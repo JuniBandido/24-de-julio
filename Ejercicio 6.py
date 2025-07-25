@@ -1,5 +1,3 @@
-#Funciones
-#en progra orientada a objetos se le dice metodos
 def promedio():
     nums = []
     negative_nums = 0
@@ -50,33 +48,38 @@ def PromedioCalificaciones():
 
 def mayorMenor():
     nums = []
-    action = input("1. Agregar número\n2. Mayor y Menor\n")
-    match action:
-        case "1":
+    while True:
+        action = input("1. Agregar número\n2. Mayor y Menor\n")
+        if action == "1":
             num = int(input("Ingrese número: "))
             nums.append(num)
-        case "2":
-            print(f"El número {max(nums)} es el mayor")
-            print(f"El número {min(nums)} es el menor")
-        case _:
+            print(nums)
+        elif action == "2":
+            mayor = max(nums)
+            minimo = min(nums)
+            print(f"El número {mayor} es el mayor")
+            print(f"El número {minimo} es el menor")
+            break
+        else:
             print("Accion no válida")
 
-menu = input("Bienvenido al programa\n"
-      "Qué deseas realizar?\n"
-      "1. Ingresar n números y mostrar:\n La suma total,\n"
-        " El promedio,\n"
-        " La cantidad de números positivos y negativos\n"
-      "2. Calcular el área de un triángulo\n"
-      "3. Verificar si un número es par o impar\n"
-      "4. Calcular el promedio de n calificaciones\n"
-      "5. Ingresar n números y mostrar el mayor y el menor\n"
-      "6. Salir\n")
 while True:
+    menu = input("Bienvenido al programa\n"
+                 "Qué deseas realizar?\n"
+                 "1. Ingresar n números y mostrar:\n La suma total,\n"
+                 " El promedio,\n"
+                 " La cantidad de números positivos y negativos\n"
+                 "2. Calcular el área de un triángulo\n"
+                 "3. Verificar si un número es par o impar\n"
+                 "4. Calcular el promedio de n calificaciones\n"
+                 "5. Ingresar n números y mostrar el mayor y el menor\n"
+                 "6. Salir\n")
     match menu:
         case "1":
             promedio()
         case "2":
-            CalcularArea()
+            area = CalcularArea()
+            print(f"El area del triangulo es de {area}")
         case "3":
             ParOImpar()
         case "4":
