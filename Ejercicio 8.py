@@ -32,4 +32,4 @@ while True:
             break
 
         case _:
-            print("Opcion no dispopnible")
+            print("Opcion no dispopnible :(")
