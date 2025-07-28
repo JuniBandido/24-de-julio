@@ -44,10 +44,26 @@ def moviesStats():
     for gener, cant in cont_gener.items():
         print(f"{cant} peliculas de {gener}")
 
-    for i in movies:
-        print(f"La pelicula más antigua es del año {i[1]}")
 
-
+    oldest = min(movies, key=lambda x: x[1])
+    print(f"La pelicula más antigua es del {oldest[1]}, es {oldest[0]}")
 
 movies = [["scary movie", 2001, "miedo"], ["caca", 2003, "comedia"]]
-moviesStats()
+
+presentation = print(" -- Bienvenido al menú -- ")
+while True:
+    menu = input("Escoge una de las opciones\n1. Agregar películas\n2. Mostrar todas las películas registradas\n3. Buscar películas por género\n4. Eliminar película por título\n5. Ver estadísticas del catálogo\n6. Salir\n")
+    match menu:
+        case "1":
+            addMovie()
+        case "2":
+            showMovies()
+        case "3":
+            showByGener()
+        case "4":
+            deleteMovieByTittle()
+        case "5":
+            moviesStats()
+        case "6":
+            print("Hasta luego :)")
+            break
